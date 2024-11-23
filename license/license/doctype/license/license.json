@@ -1,0 +1,249 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{license_number}-{MM}-{YYYY}-{###}",
+ "creation": "2024-11-23 10:37:44.484284",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "basic_information_section",
+  "license_name",
+  "license_type",
+  "license_duration",
+  "column_break_dcgq",
+  "license_number",
+  "issued_by",
+  "license_count",
+  "validity_section",
+  "issue_date",
+  "renewal_date",
+  "column_break_hbss",
+  "expiry_date",
+  "holder_information_section",
+  "license_holder",
+  "column_break_ithj",
+  "contact_details",
+  "additional_details_tab",
+  "status_section",
+  "status",
+  "payment_website",
+  "column_break_uyao",
+  "renewal_status",
+  "license_usage_section",
+  "used_count",
+  "column_break_sbnc",
+  "unused_cunt",
+  "section_break_zyje",
+  "attachments",
+  "column_break_gojs",
+  "license_fee"
+ ],
+ "fields": [
+  {
+   "fieldname": "license_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "License Name",
+   "reqd": 1
+  },
+  {
+   "default": "Single",
+   "fieldname": "license_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "License Type",
+   "options": "Single\nMultiple",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_dcgq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "license_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "License Number",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "issued_by",
+   "fieldtype": "Data",
+   "label": "Issued By",
+   "reqd": 1
+  },
+  {
+   "fieldname": "validity_section",
+   "fieldtype": "Section Break",
+   "label": "Validity"
+  },
+  {
+   "fieldname": "issue_date",
+   "fieldtype": "Date",
+   "label": "Issue Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "renewal_date",
+   "fieldtype": "Date",
+   "label": "Renewal Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_hbss",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "expiry_date",
+   "fieldtype": "Datetime",
+   "label": "Expiry Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "holder_information_section",
+   "fieldtype": "Section Break",
+   "label": "Holder Information"
+  },
+  {
+   "fieldname": "license_holder",
+   "fieldtype": "Data",
+   "label": "License Holder"
+  },
+  {
+   "fieldname": "column_break_ithj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contact_details",
+   "fieldtype": "Data",
+   "label": "Contact Details"
+  },
+  {
+   "fieldname": "basic_information_section",
+   "fieldtype": "Section Break",
+   "label": "Basic Information"
+  },
+  {
+   "fieldname": "additional_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Additional Details"
+  },
+  {
+   "fieldname": "status_section",
+   "fieldtype": "Section Break",
+   "label": "Status"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Active\nExpired\nSuspended\nRevoked"
+  },
+  {
+   "fieldname": "column_break_uyao",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "renewal_status",
+   "fieldtype": "Select",
+   "label": "Renewal Status",
+   "options": "Pending\nRenewed",
+   "reqd": 1
+  },
+  {
+   "fieldname": "license_duration",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "License Duration",
+   "options": "Monthly\nQuarterly\nYearly",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_zyje",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "attachments",
+   "fieldtype": "Attach",
+   "label": "Attachments"
+  },
+  {
+   "fieldname": "column_break_gojs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "license_fee",
+   "fieldtype": "Currency",
+   "label": "License Fee"
+  },
+  {
+   "depends_on": "eval: doc.license_type == \"Multiple\"",
+   "fieldname": "license_count",
+   "fieldtype": "Int",
+   "label": "License Count"
+  },
+  {
+   "depends_on": "eval: doc.license_type == \"Multiple\"",
+   "fieldname": "license_usage_section",
+   "fieldtype": "Section Break",
+   "label": "License Usage "
+  },
+  {
+   "fieldname": "used_count",
+   "fieldtype": "Int",
+   "label": "Used Count"
+  },
+  {
+   "fieldname": "column_break_sbnc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "unused_cunt",
+   "fieldtype": "Int",
+   "label": "Unused Cunt",
+   "read_only": 1
+  },
+  {
+   "fieldname": "payment_website",
+   "fieldtype": "Data",
+   "label": "Payment Website",
+   "options": "URL"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-11-23 11:57:31.528466",
+ "modified_by": "Administrator",
+ "module": "License",
+ "name": "License",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [
+  {
+   "color": "Green",
+   "title": "Single"
+  },
+  {
+   "color": "Blue",
+   "title": "Multiple"
+  }
+ ],
+ "title_field": "license_number"
+}
