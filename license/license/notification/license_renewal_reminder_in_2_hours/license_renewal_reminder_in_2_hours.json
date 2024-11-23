@@ -1,0 +1,37 @@
+{
+ "attach_print": 0,
+ "channel": "Email",
+ "condition": "",
+ "creation": "2024-11-23 14:02:13.368733",
+ "date_changed": "renewal_date",
+ "datetime_changed": "expiry_date",
+ "days_in_advance": 2,
+ "docstatus": 0,
+ "doctype": "Notification",
+ "document_type": "License",
+ "enabled": 1,
+ "event": "Minutes Before",
+ "idx": 0,
+ "is_standard": 1,
+ "message": "Dear Sir,\n\nThis is a final reminder that your license **{{ doc.license_name }}** (License No: {{ doc.license_number }}) will expire in **2 hours** (on {{ doc.expiry_date }}).\n\nPlease renew it immediately to avoid any interruptions.\n\nThank you,  \nIT Team",
+ "message_type": "HTML",
+ "minutes_offset": 120,
+ "modified": "2024-11-23 14:03:15.487973",
+ "modified_by": "Administrator",
+ "module": "License",
+ "name": "License Renewal Reminder in 2 Hours",
+ "owner": "Administrator",
+ "recipients": [
+  {
+   "receiver_by_role": "License Manager"
+  },
+  {
+   "receiver_by_role": "System Manager"
+  }
+ ],
+ "send_system_notification": 1,
+ "send_to_all_assignees": 0,
+ "sender": "Alerts",
+ "sender_email": "alerts@aalamsoft.com",
+ "subject": "{{doc.license_number}} Renewal Reminder in 2 Hours"
+}

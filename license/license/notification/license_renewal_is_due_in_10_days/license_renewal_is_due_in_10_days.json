@@ -1,0 +1,36 @@
+{
+ "attach_print": 0,
+ "channel": "Email",
+ "condition": "doc.renewal_status== \"Pending\"",
+ "creation": "2024-11-23 13:46:56.724756",
+ "date_changed": "renewal_date",
+ "days_in_advance": 10,
+ "docstatus": 0,
+ "doctype": "Notification",
+ "document_type": "License",
+ "enabled": 1,
+ "event": "Days Before",
+ "idx": 0,
+ "is_standard": 1,
+ "message": "Dear Sir,\n\nThis is a reminder that your license \"{{ doc.license_name }}\" (License No: {{ doc.license_number }}) is set to expire on {{ doc.expiry_date }}.\n\nPlease renew it by {{ frappe.utils.add_days(doc.expiry_date, -15) }} to avoid any inconvenience.\n\nBest Regards,  \nAalam It Support",
+ "message_type": "HTML",
+ "minutes_offset": 0,
+ "modified": "2024-11-23 13:56:21.729576",
+ "modified_by": "Administrator",
+ "module": "License",
+ "name": "License Renewal is Due in 10 Days",
+ "owner": "Administrator",
+ "recipients": [
+  {
+   "receiver_by_role": "System Manager"
+  },
+  {
+   "receiver_by_role": "License Manager"
+  }
+ ],
+ "send_system_notification": 1,
+ "send_to_all_assignees": 0,
+ "sender": "Alerts",
+ "sender_email": "alerts@aalamsoft.com",
+ "subject": "{{doc.license_number}} Renewal is Due in 10 Days"
+}

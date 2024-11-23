@@ -201,7 +201,9 @@
   {
    "fieldname": "unused_cunt",
    "fieldtype": "Int",
+   "is_virtual": 1,
    "label": "Unused Cunt",
+   "options": "doc.license_count-doc.used_count",
    "read_only": 1
   },
   {
@@ -213,7 +215,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-23 11:57:31.528466",
+ "modified": "2024-11-23 15:30:35.543175",
  "modified_by": "Administrator",
  "module": "License",
  "name": "License",
@@ -229,6 +231,18 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "License Manager",
    "share": 1,
    "write": 1
   }
