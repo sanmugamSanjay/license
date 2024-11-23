@@ -63,7 +63,7 @@
    "fieldname": "license_number",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "License Number",
+   "label": "License Number ",
    "reqd": 1,
    "unique": 1
   },
@@ -215,7 +215,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-23 15:30:35.543175",
+ "modified": "2024-11-23 20:51:46.142616",
  "modified_by": "Administrator",
  "module": "License",
  "name": "License",
