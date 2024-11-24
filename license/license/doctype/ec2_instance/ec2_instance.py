@@ -30,18 +30,12 @@ class EC2Instance(Document):
 		raise NotImplementedError
 
 	def load_from_db(self):
-		# client=create_aws_client('ec2', aws_access_key, aws_secret_key, region)
+		aws_access_key = frappe.conf.get("aws_access_key")
+		aws_secret_key = frappe.conf.get("aws_secret_key")
+		region = frappe.conf.get("region")
+		client=create_aws_client('ec2', aws_access_key, aws_secret_key, region)
 		data_list=get_ec2_details(client)
 		data = next((item for item in data_list if item["name"] == self.name), None)
-		# 
-
-		# client=get_uptime_kuma()
-		# d=client.get_monitor(self.name)
-		# st=client.get_monitor_status(d["id"])
-		# frappe.errprint(st)
-		# status = self.check_status(str(st))
-		# status = "PAUSE" if status == "UP" and not d["active"] else status  # Retain current status if not paused
-		# data={"name":d["id"],"uptime_kuma_name":d["name"],"id":d["name"],"url":d["url"],"host_name":d["hostname"],"status":status,"is_pause": 1 if not d["active"] else 0}
 		super(Document, self).__init__(data)
 
 		# raise NotImplementedError
@@ -54,8 +48,10 @@ class EC2Instance(Document):
 
 	@staticmethod
 	def get_list(filters=None, page_length=20, **kwargs):
-	
-		# client=create_aws_client('ec2', aws_access_key, aws_secret_key, region)
+		aws_access_key = frappe.conf.get("aws_access_key")
+		aws_secret_key = frappe.conf.get("aws_secret_key")
+		region = frappe.conf.get("region")
+		client=create_aws_client('ec2', aws_access_key, aws_secret_key, region)
 		data=get_ec2_details(client)
 		frappe.errprint(data)
 		return data
