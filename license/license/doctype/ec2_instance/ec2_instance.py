@@ -30,10 +30,10 @@ class EC2Instance(Document):
 		raise NotImplementedError
 
 	def load_from_db(self):
-		aws_access_key = frappe.conf.get("aws_access_key")
-		aws_secret_key = frappe.conf.get("aws_secret_key")
+		a_access_key = frappe.conf.get("aws_access_key")
+		a_secret_key = frappe.conf.get("aws_secret_key")
 		region = frappe.conf.get("region")
-		client=create_aws_client('ec2', aws_access_key, aws_secret_key, region)
+		client=create_aws_client('ec2', a_access_key, a_secret_key, region)
 		data_list=get_ec2_details(client)
 		data = next((item for item in data_list if item["name"] == self.name), None)
 		super(Document, self).__init__(data)
@@ -48,10 +48,10 @@ class EC2Instance(Document):
 
 	@staticmethod
 	def get_list(filters=None, page_length=20, **kwargs):
-		aws_access_key = frappe.conf.get("aws_access_key")
-		aws_secret_key = frappe.conf.get("aws_secret_key")
+		a_access_key = frappe.conf.get("aws_access_key")
+		a_secret_key = frappe.conf.get("aws_secret_key")
 		region = frappe.conf.get("region")
-		client=create_aws_client('ec2', aws_access_key, aws_secret_key, region)
+		client=create_aws_client('ec2', a_access_key, a_secret_key, region)
 		data=get_ec2_details(client)
 		frappe.errprint(data)
 		return data
