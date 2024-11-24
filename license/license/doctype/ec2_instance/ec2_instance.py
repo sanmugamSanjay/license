@@ -30,7 +30,6 @@ class EC2Instance(Document):
 		raise NotImplementedError
 
 	def load_from_db(self):
-		
 		client=create_aws_client('ec2', aws_access_key, aws_secret_key, region)
 		data_list=get_ec2_details(client)
 		data = next((item for item in data_list if item["name"] == self.name), None)
@@ -55,9 +54,7 @@ class EC2Instance(Document):
 
 	@staticmethod
 	def get_list(filters=None, page_length=20, **kwargs):
-		aws_access_key = 'AKIA3FLDYWIGZ6OOGV44'
-		aws_secret_key = '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'
-		region = 'ap-south-1'
+	
 		client=create_aws_client('ec2', aws_access_key, aws_secret_key, region)
 		data=get_ec2_details(client)
 		frappe.errprint(data)
